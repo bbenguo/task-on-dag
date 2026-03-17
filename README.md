@@ -11,3 +11,32 @@
   <version>1.0.0</version>
 </dependency>
 ```
+
+```java
+Flow flow = makeComplexFlow();
+Assert.isTrue(flow.validate(), "任务流初始化失败");
+
+TestContext context = new TestContext();
+FlowResult execute = flow.execute(context, Flow.TaskDirection.ROOT_FIRST);
+Assert.isTrue(execute.isSuccess(), "任务执行失败");
+
+
+
+private Flow makeComplexFlow() {
+    Flow flow = new Flow("complex-flow");
+    TestTask a = new TestTask("a");
+    TestTask b = new TestTask("b");
+    TestTask c = new TestTask("c");
+    TestTask d = new TestTask("d");
+    TestTask e = new TestTask("e");
+    TestTask f = new TestTask("f");
+    TestTask g = new TestTask("g");
+    TestTask h = new TestTask("h");
+
+    flow.addTask(a, b, c);
+    flow.addTask(b, e, f, g);
+    flow.addTask(c, d);
+    flow.addTask(h);
+    return flow;
+}
+```
