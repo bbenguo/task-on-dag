@@ -4,16 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.mude.componet</groupId>
+        <groupId>io.github.bbenguo</groupId>
         <artifactId>task-on-dag</artifactId>
         <version>1.0.0</version>
     </parent>
 
     <artifactId>task-on-dag-core</artifactId>
     <packaging>jar</packaging>
+    <name>ask-on-dag-core</name>
 
     <properties>
-        <maven.compiler.source>23</maven.compiler.source>
+        <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
