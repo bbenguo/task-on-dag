@@ -24,13 +24,13 @@ public class Flow {
         this.id = id;
     }
 
-    public void addTask(Task<?> task, Task<?>... dependOn) {
-        if (dependOn.length == 0) {
+    public void addTask(Task<?> task, Task<?>... dependencies) {
+        if (dependencies.length == 0) {
             graph.addEdge(task, null);
             return;
         }
 
-        for(Task<?> t : dependOn){
+        for(Task<?> t : dependencies){
             graph.addEdge(task, t);
         }
     }
